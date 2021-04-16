@@ -3,6 +3,7 @@ var angry = document.getElementById("angry-image")
 
 // ------------------------ MOUSE ---------------------- //
 // Build safezone
+var initialized = false;
 var screenWidth = window.innerWidth;
 var screenHeight = window.innerHeight;
 var happy = true;
@@ -22,23 +23,24 @@ function handler(e) {
     }
 
     // React to mouse
-    if (pageY < screenHeight * .10) {
+    if (pageY < screenHeight * .10 & initialized) {
         dont.style.color = 'rgb(255, 0, 0)';
         dont.style.fontSize = '5em';
         dont.innerText = "I SAID DON'T LEAVE!"
         angry.style.display = 'initial';
         happy = false;
     }
-    else if (pageY < screenHeight * .20) {
+    else if (pageY < screenHeight * .20 & initialized) {
         dont.style.fontSize = '4em';
         dont.innerText = "PLEASE DON'T LEAVE"
         angry.style.display = 'none';
         happy = true;
     }
-    else {
+    else if (pageY >= screenHeight * .20) {
         dont.style.fontSize = '3em';
         dont.innerText = "PLEASE DON'T LEAVE"
         angry.style.display = 'none';
+        initialized = true;
         happy = true;
     }
 

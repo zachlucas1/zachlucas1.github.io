@@ -18,4 +18,9 @@
 
 #angry-image {
     width: 300px;
+    display: none;
+}
+
+#text {
+    font-size: 3em;
 }
