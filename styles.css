@@ -1,0 +1,21 @@
+* {
+    margin: 0px;
+    background: black;
+}
+
+#dont{
+    color: white;
+    text-align: center;
+    grid-column: 1/14;
+    grid-row: 5;
+}
+
+#home-grid {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-gap: 2em;
+}
+
+#angry-image {
+    width: 300px;
+}
